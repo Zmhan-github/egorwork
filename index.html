@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        header {
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
     <title>My Page</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <pre>I am Egor</pre>
+    <div id="shop" class="container">
+        <header>{{ header }}</header>
+        <button @click="changeText">{{ click }}</button>
+        <input type="text" v-model="header">
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        new Vue({
+            el: '#shop',
+            data: {
+                header: 'This is my page =) Welcome!!!',
+                click: 'Click me!'
+            },
+            methods: {
+                changeText: function() {
+                    this.header = 'Текст на русском!',
+                    this.click = 'Кнопка'
+                }
+            }
+        });
+    </script>
 </body>
 </html>
