@@ -27,11 +27,14 @@
         .my-footer {
             height: 20vh;
         }
+
+        .fix-cart {
+            width: 260px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-
                 <div class="row my-header">
                     <div class="col-md-3 col-6 cl-1">
                         Строка 1 Колонка 1
@@ -49,11 +52,28 @@
                 </div>
 
         <div class="row cl my-main">
-            <div class="col-md-9 col-3 cl-2">
+            <div class="col-3 cl-2">
                 #3
             </div>
-            <div class="col-md-3 col-9 cl-1">
-                #9
+            <div class="col-9 cl-1">
+                    <div class="card fix-cart">
+                        <h5 class="card-header">{{ dnevnik.monday.day }}</h5>
+                        <div class="card-body">
+                            <p class="card-text">{{ dnevnik.monday.raspis[0] }}</p>
+                            <p class="card-text">{{ dnevnik.monday.raspis[1] }}</p>
+                            <p class="card-text">{{ dnevnik.monday.raspis[2] }}</p>
+                            <a href="#" class="btn btn-primary">Посмотреть д/з</a>
+                        </div>
+                    </div>
+                    <div class="card fix-cart">
+                            <h5 class="card-header">{{ dnevnik.thouzday.day.toUpperCase() }}</h5>
+                            <div class="card-body">
+                                <p class="card-text">{{ dnevnik.thouzday.raspis[0] }}</p>
+                                <p class="card-text">{{ dnevnik.thouzday.raspis[1] }}</p>
+                                <p class="card-text">{{ dnevnik.thouzday.raspis[2] }}</p>
+                                <a href="#" class="btn btn-primary">Посмотреть д/з</a>
+                            </div>
+                        </div>
             </div>
         </div>
 
@@ -63,5 +83,24 @@
             <div class="col-6 col-md-4 cl-3">.col-6 .col-md-4</div>
         </div>
     </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+
+        new Vue({
+            el: '.container',
+            data: {
+                dnevnik: {
+                    monday: {
+                        day: 'Понедельник',
+                        raspis: ['Алгебра', 'Физика', 'Биология']
+                    },
+                    thouzday: {
+                        day: 'Вторник',
+                        raspis: ['Физра', 'Лит-ра', 'Биология']
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
