@@ -2,22 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bootstrap 4. Пример работы!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        .cl {
+            background: #1ce;
+        }
+        .cl-1 {
+            background: aqua;
+        }
+        .cl-2 {
+            background: tomato;
+        }
+        .cl-3 {
+            background: gold;
+        }
+
+        .my-header {
+            height: 10vh;
+        }
+        .my-main {
+            height: 70vh;
+        }
+        .my-footer {
+            height: 20vh;
+        }
+    </style>
 </head>
 <body>
-    <div id="shopping-list">
-        <h1>{{ header }}</h1>
-        <input v-model="header">
+    <div class="container">
+
+                <div class="row my-header">
+                    <div class="col-md-3 col-6 cl-1">
+                        Строка 1 Колонка 1
+                    </div>
+                    <div class="col-md-6 col-6 align-self-center">
+                        <nav class="nav">
+                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="#">Product</a>
+                        </nav>
+                    </div>
+                    <div class="col-md-3 col-12 cl-3">
+                        Строка 1 колонка 3
+                    </div>
+                </div>
+
+        <div class="row cl my-main">
+            <div class="col-md-9 col-3 cl-2">
+                #3
+            </div>
+            <div class="col-md-3 col-9 cl-1">
+                #9
+            </div>
+        </div>
+
+        <div class="row my-footer">
+            <div class="col-6 col-md-4 cl-1">.col-6 .col-md-4</div>
+            <div class="col-6 col-md-4 cl-2">.col-6 .col-md-4</div>
+            <div class="col-6 col-md-4 cl-3">.col-6 .col-md-4</div>
+        </div>
     </div>
-    <script src="https://unpkg.com/vue"></script>
-    <script>
-        new Vue({
-            el: '#shopping-list',
-            data: {
-                header: 'This is my page =) Welcome!!!',
-            }
-        });
-    </script>
 </body>
 </html>
